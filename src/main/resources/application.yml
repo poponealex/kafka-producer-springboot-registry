@@ -1,0 +1,21 @@
+server.port: 8080
+#### kafka
+spring.kafka.bootstrap-servers: kafka-url:9092
+kafka.topic.name: voiture-topic
+ 
+
+#spring.kafka.properties.sasl.mechanism: SCRAM-SHA-512 
+#spring.kafka.properties.security.protocol: SASL_SSL
+#spring.kafka.properties.ssl.truststore.location: /truststore/ca.p12
+#spring.kafka.properties.sasl.jaas.config: org.apache.kafka.common.security.scram.ScramLoginModule required username="@@username@@" password="@@password@@";
+#spring.kafka.properties.ssl.truststore.password: @@JKS_PASSWORD@@
+
+
+##AVEC REGISTRY
+spring.kafka.producer.key-serializer: org.apache.kafka.common.serialization.StringSerializer
+spring.kafka.producer.value-serializer: io.apicurio.registry.utils.serde.AvroKafkaSerializer
+spring.kafka.producer.properties.apicurio.registry.url: http://registry-service:8080/api
+spring.kafka.producer.properties.apicurio.registry.artifact-id: io.apicurio.registry.utils.serde.strategy.TopicIdStrategy
+spring.kafka.producer.properties.apicurio.registry.global-id: io.apicurio.registry.utils.serde.strategy.GetOrCreateIdStrategy
+
+ 

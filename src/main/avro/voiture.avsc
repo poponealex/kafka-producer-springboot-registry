@@ -1,0 +1,24 @@
+{
+  "name": "Voiture",
+  "namespace": "lu.its4u.kafka.dto",
+  "type": "record",
+  "doc": "Avro Schema for Voiture",
+  "fields": [
+    {
+      "name": "identifiant",
+      "type": "long"
+    },
+    {
+      "name": "marque",
+      "type": "string"
+    },
+    {
+      "name": "modele",
+      "type": "string"
+    },
+    {
+      "name": "dateMiseEnCirculation",
+      "type": "long"
+    }
+  ]
+}
